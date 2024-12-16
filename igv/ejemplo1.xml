@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Session genome="C:\Users\veros\OneDrive\Escritorio\bioinfogp\chromosomes\Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa" locus="I:110981-111028" version="8">
+    <Resources>
+        <Resource path="C:\Users\veros\OneDrive\Escritorio\bioinfogp\genes\Saccharomyces_cerevisiae.R64-1-1.99.gff3" type="gff3"/>
+        <Resource path="C:\Users\veros\OneDrive\Escritorio\bioinfogp\out\1M_SRR9336468_sort.bam.bam" type="bam"/>
+    </Resources>
+    <Panel height="560" name="Panel1734232451541" width="1347">
+        <Track attributeKey="1M_SRR9336468_sort.bam.bam Coverage" autoScale="true" clazz="org.broad.igv.sam.CoverageTrack" fontSize="10" id="C:\Users\veros\OneDrive\Escritorio\bioinfogp\out\1M_SRR9336468_sort.bam.bam_coverage" name="1M_SRR9336468_sort.bam.bam Coverage" snpThreshold="0.2" visible="true">
+            <DataRange baseline="0.0" drawBaseline="true" flipAxis="false" maximum="35.0" minimum="0.0" type="LINEAR"/>
+        </Track>
+        <Track attributeKey="1M_SRR9336468_sort.bam.bam Junctions" autoScale="false" clazz="org.broad.igv.sam.SpliceJunctionTrack" fontSize="10" groupByStrand="false" height="60" id="C:\Users\veros\OneDrive\Escritorio\bioinfogp\out\1M_SRR9336468_sort.bam.bam_junctions" maxdepth="50" name="1M_SRR9336468_sort.bam.bam Junctions" visible="false"/>
+        <Track attributeKey="1M_SRR9336468_sort.bam.bam" clazz="org.broad.igv.sam.AlignmentTrack" color="185,185,185" displayMode="FULL" experimentType="OTHER" fontSize="10" id="C:\Users\veros\OneDrive\Escritorio\bioinfogp\out\1M_SRR9336468_sort.bam.bam" name="1M_SRR9336468_sort.bam.bam" visible="true">
+            <RenderOptions duplicatesOption="FILTER"/>
+        </Track>
+    </Panel>
+    <Panel height="194" name="FeaturePanel" width="1347">
+        <Track attributeKey="Reference sequence" clazz="org.broad.igv.track.SequenceTrack" fontSize="10" id="Reference sequence" name="Reference sequence" sequenceTranslationStrandValue="+" shouldShowTranslation="false" visible="true"/>
+        <Track attributeKey="Saccharomyces_cerevisiae.R64-1-1.99.gff3" clazz="org.broad.igv.track.FeatureTrack" colorScale="ContinuousColorScale;0.0;63.0;255,255,255;0,0,178" displayMode="EXPANDED" fontSize="10" groupByStrand="false" id="C:\Users\veros\OneDrive\Escritorio\bioinfogp\genes\Saccharomyces_cerevisiae.R64-1-1.99.gff3" name="Saccharomyces_cerevisiae.R64-1-1.99.gff3" visible="true"/>
+    </Panel>
+    <PanelLayout dividerFractions="0.012195121951219513,0.7764227642276422"/>
+    <HiddenAttributes>
+        <Attribute name="DATA FILE"/>
+        <Attribute name="DATA TYPE"/>
+        <Attribute name="NAME"/>
+    </HiddenAttributes>
+</Session>
