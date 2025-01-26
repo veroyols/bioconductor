@@ -1,13 +1,20 @@
 # 🧬 Bioconductor Docker Environment
 Este repositorio contiene configuraciones y guías para crear un entorno de análisis bioinformático utilizando Bioconductor dentro de un contenedor Docker con RStudio.
 
-## 🛠️ Entorno
-Configuración
-   * Plantilla: Imagen Docker oficial de Bioconductor, disponibles en Docker Hub [Docker Hub](https://hub.docker.com/u/bioconductor/).
-   * Instancia: Contenedor generado a partir de la imagen.
-   * Persistencia: Volumen montado para guardar datos y scripts en el host.
+## 📥 Descargar imagen de DockerHub
+```
+docker pull veroyols/myapp_bioc
+```
 
-Dockerfile → Image → Container → Volume
+digest: `sha256:6ae1ae06cdf622bf64eee82d30fa6b872fd886294cb201e40a78e40f49c4ccf8 size: 4509`
+
+
+## 🛠️ Entorno
+   * Base: Imagen Docker oficial de Bioconductor, disponibles en Docker Hub [Docker Hub](https://hub.docker.com/u/bioconductor/).
+   * Contenedor: generado a partir de la imagen.
+   * Persistencia: Volumen montado para guardar datos.
+
+📂 Dockerfile → 🖼️ Imagen → 📦 Contenedor → 💾 Volumen
 
 ## 🚀 Levantar el Contenedor
 
@@ -16,42 +23,37 @@ Comando en la terminal (cmd):
 docker run 
   -e PASSWORD=bioc \
   -p 8787:8787 \
+  -p 8000:8000 \
   -v C:/repos/bioconductor:/home/rstudio/Desktop \
-  bioconductor/bioconductor_docker:latest
+  veroyols/myapp_bioc:latest
 ```
 ### Parámetros:
-  * `-e PASSWORD=bioc`: Establece la contraseña para el usuario rstudio.
-  * `-p 8787:8787`: Expone el puerto 8787 para acceder a RStudio.
-  * `-v C:/repos/bioconductor:/home/rstudio/Desktop`: Monta el volumen del host al contenedor para persistencia de datos.
+  * `-e PASSWORD=bioc`: contraseña para el usuario rstudio.
+  * `-p 8787:8787`: acceso a RStudio en el puerto 8787.
+  * `-p 8000:8000`: exponer una API con plumber en el puerto 8000.
+  * `-v C:/repos/bioconductor:/home/rstudio/Desktop`: volumen para persistencia de datos.
 
 ## 🌐 Acceso a RStudio
-  * URL: http://localhost:8787
-  * Usuario: rstudio
-  * Contraseña: bioc
+  📌 URL: http://localhost:8787
+  👤 Usuario: rstudio
+  🔑 Contraseña: bioc
 
 ## 🧩 Versiones Compatibles
 Ver version de R
 ```
 R.version.string
 ```
-❗ Bioconductor 3.19 → R 4.3.x
+❗ R 4.3.x → Bioconductor 3.19
 
-❗ Bioconductor 3.20 → R 4.4.x
+❗ R 4.4.x → Bioconductor 3.20
 
-## 📦 Instalación de librerías
+## 📦 Instalación de paquetes (compatibles con R 4.4.x)
 ```
 install.packages("BiocManager")
 install.packages("R.utils")
-library("BiocManager")
-```
-Instalar la version compatible con R 4.4.x
-```
 BiocManager::install(version = "3.20")
-BiocManager::install("Rsamtools")
-BiocManager::install("Rbowtie2")
-BiocManager::install("rtracklayer")
+BiocManager::install(c("Rsamtools", "Rbowtie2", "rtracklayer"))
 ```
-
 ## Ver Versiones Instaladas
 ```
 BiocManager::version() #biocmanager
